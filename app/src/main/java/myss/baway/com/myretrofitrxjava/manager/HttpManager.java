@@ -4,15 +4,10 @@ import java.util.Map;
 
 import myss.baway.com.myretrofitrxjava.bean.NewsRoot;
 import myss.baway.com.myretrofitrxjava.bean.TryUser;
-import myss.baway.com.myretrofitrxjava.interfac.ProjectApI;
 import myss.baway.com.myretrofitrxjava.interfac.RequestAPI;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -23,7 +18,7 @@ import rx.schedulers.Schedulers;
 */
 
 public class HttpManager {
-    public static void getMethod(String baseUrl, String url, final Callback<String> callback){
+   /* public static void getMethod(String baseUrl, String url, final Callback<String> callback){
         Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(ScalarsConverterFactory.create()).build();
       //java 动态
         ProjectApI projectApI = retrofit.create(ProjectApI.class);
@@ -40,7 +35,7 @@ public class HttpManager {
               callback.onFailure(call,t);
             }
         });
-    }
+    }*/
 
     public static void getMethod3(String baseUrl, Map<String,String> map, Observer observer){
         Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
